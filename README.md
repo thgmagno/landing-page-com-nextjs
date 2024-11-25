@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Livros SaaS - Landing Page com Next.js
 
-## Getting Started
+Este projeto consiste no desenvolvimento de uma Landing Page para um SaaS (Software as a Service), utilizando Next.js, o intuito do projeto é criar uma interface responsiva, moderna e funcional que atende às necessidades de empresas que desejam apresentar seus serviços de forma clara e eficiente. 
 
-First, run the development server:
+A Landing Page é projetada para atuar como a principal vitrine de um serviço digital, sendo fundamental para capturar leads, informar o público-alvo sobre os diferenciais do produto e direcionar os usuários para ações como o cadastro ou a assinatura de planos. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Durante o desenvolvimento, priorizei a criação de uma interface amigável, com foco na experiência do usuário (UX) e no desempenho, otimizando o carregamento das páginas e garantindo uma navegação fluida.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Seções do Projeto
+A primeira seção é o ponto de destaque da página. Contém o título principal, uma breve descrição do produto ou serviço e um call-to-action (CTA) em destaque.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Logo abaixo são apresentadas os principais benefícios do serviço. O objetivo é transmitir de forma direta como o serviço pode solucionar os problemas do usuário ou atender suas necessidades.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Em seguida, temos a seção que detalha as opções de assinatura disponíveis. Cada plano é apresentado com seus valores e benefícios, de forma clara e objetiva. Um botão CTA acompanha cada plano, incentivando o visitante a realizar a inscrição.
 
-## Learn More
+Por fim, o rodapé finaliza com o nome do produto e os créditos de copyright, essa estrutura garante um encerramento direto e objetivo, sem distrações, com foco em conversão.
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologias Utilizadas
+O projeto foi desenvolvido com uma stack moderna e eficiente, destacando-se as seguintes tecnologias:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js: Escolhi Next.js pela sua flexibilidade e vantagens em relação à renderização híbrida (SSR e SSG). O framework permite que as páginas sejam otimizadas tanto para SEO quanto para desempenho, fundamentais para landing pages.
+- React: Utilizado para criar componentes reutilizáveis e garantir um código modular e organizado.
+- TailwindCSS: A estilização foi feita com TailwindCSS, focando em responsividade e consistência visual.
+- Vercel: Para hospedagem, utilizei a Vercel, que integra-se nativamente com Next.js, facilitando o deploy e garantindo alta performance.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Resultados
+O resultado final foi uma landing page funcional e altamente atrativa, que serve como base para qualquer SaaS que queira destacar seus serviços no mercado. Além de atender aos objetivos de design e funcionalidade, o projeto reflete boas práticas de desenvolvimento, como:
 
-## Deploy on Vercel
+- Código limpo e bem estruturado, com atenção às convenções de mercado.
+- Desempenho otimizado.
+- Flexibilidade para customizações futuras, graças à modularidade dos componentes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Aprendizados
+Este projeto foi uma oportunidade de consolidar ainda mais meus conhecimentos em Next.js e design de interfaces modernas. Além disso, o uso da biblioteca Stripe para a integração de pagamento foi um aprendizado interessante.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Por fim, este projeto reforça meu compromisso com o desenvolvimento de soluções de alta qualidade para desafios complexos.
