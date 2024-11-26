@@ -1,6 +1,7 @@
 'use client'
 
 import { actions } from '@/actions'
+import { FormErrors } from '@/components/common/FormErrors'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -50,6 +51,7 @@ export default function RegisterForm() {
           </p>
         )}
       </div>
+      {formState.errors._form && <FormErrors errors={formState.errors._form} />}
       <Button type="submit" className="w-full" disabled={isPending}>
         {isPending ? 'Aguarde...' : 'Cadastrar'}
       </Button>

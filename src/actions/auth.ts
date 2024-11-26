@@ -6,6 +6,9 @@ import { loginSchema, registerSchema } from '@/lib/schemas'
 import { LoginFormState, RegisterFormState } from '@/lib/states'
 import { User } from '@prisma/client'
 import { compareSync, hashSync } from 'bcrypt-ts'
+import { AuthError } from 'next-auth'
+import { redirect } from 'next/navigation'
+import { signIn } from 'root/auth'
 
 export async function loginUser(
   formState: LoginFormState,
@@ -16,14 +19,23 @@ export async function loginUser(
     password: formData.get('password'),
   })
 
+  if (!parsed.success) {
+    return { errors: parsed.error.flatten().fieldErrors }
+  }
+
   try {
-    console.log(parsed)
+    await signIn('credentials', {
+      email: parsed.data.email,
+      password: parsed.data.password,
+    })
   } catch (error) {
-    console.log(error)
+    if (error instanceof AuthError) {
+      return { errors: { _form: 'Email ou senha inválidos' } }
+    }
     return { errors: { _form: 'Erro ao validar o formulário' } }
   }
 
-  return { errors: {} }
+  redirect('/')
 }
 
 export async function registerUser(
@@ -63,12 +75,17 @@ export async function registerUser(
         password: hashSync(parsed.data.password),
       },
     })
+
+    await signIn('credentials', {
+      email: parsed.data.email,
+      password: parsed.data.password,
+    })
   } catch (error) {
     console.log(error)
-    return { errors: {} }
+    return { errors: { _form: 'Erro ao cadastrar o usuário' } }
   }
 
-  return { errors: {} }
+  redirect('/')
 }
 
 export async function findUserByCredentials(credentials: {
