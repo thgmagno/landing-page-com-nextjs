@@ -1,19 +1,19 @@
 'use client'
 
 import {
-  DropdownMenu as DropdownMenuUI,
+  DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuTrigger,
   DropdownMenuItem,
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { InfoIcon, MenuIcon, LogInIcon, CircleDollarSign } from 'lucide-react'
+import { CircleDollarSign, InfoIcon, LogInIcon, MenuIcon } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
-export function DropdownMenu() {
+export function DropdownPublic() {
   const { push } = useRouter()
 
   return (
-    <DropdownMenuUI>
+    <DropdownMenu>
       <DropdownMenuTrigger asChild className="md:hidden">
         <MenuIcon size={32} />
       </DropdownMenuTrigger>
@@ -31,6 +31,6 @@ export function DropdownMenu() {
           Login
         </DropdownMenuItem>
       </DropdownMenuContent>
-    </DropdownMenuUI>
+    </DropdownMenu>
   )
 }

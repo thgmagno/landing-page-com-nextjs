@@ -8,7 +8,7 @@ import { User } from '@prisma/client'
 import { compareSync, hashSync } from 'bcrypt-ts'
 import { AuthError } from 'next-auth'
 import { redirect } from 'next/navigation'
-import { signIn } from 'root/auth'
+import { signIn, signOut } from 'root/auth'
 
 export async function loginUser(
   formState: LoginFormState,
@@ -36,6 +36,10 @@ export async function loginUser(
   }
 
   redirect('/')
+}
+
+export async function logoutUser() {
+  await signOut()
 }
 
 export async function registerUser(
