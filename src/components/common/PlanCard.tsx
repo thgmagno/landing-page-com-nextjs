@@ -11,7 +11,7 @@ import { CheckIcon } from 'lucide-react'
 export function PlanCard() {
   const Item = ({ label }: { label: string }) => (
     <li className="flex items-center gap-2 text-sm text-muted-foreground">
-      <CheckIcon className="w-4 h-4 text-green-500" strokeWidth={3} />
+      <CheckIcon className="h-4 w-4 text-green-500" strokeWidth={3} />
       {label}
     </li>
   )
@@ -27,15 +27,15 @@ export function PlanCard() {
       <CardContent>
         <h1 className="text-4xl font-bold">
           R$ 29,00{' '}
-          <span className="text-muted-foreground font-light text-lg">/mês</span>
+          <span className="text-lg font-light text-muted-foreground">/mês</span>
         </h1>
-        <ul className="space-y-2 my-4">
+        <ul className="my-4 space-y-2">
           <Item label="1 ebook por mês" />
           <Item label="Curadoria especial" />
           <Item label="Acesso ilimitado" />
           <Item label="Cancele a qualquer momento" />
         </ul>
-        <Button className="w-full mt-4">Assine agora</Button>
+        <Button className="mt-4 w-full">Assine agora</Button>
       </CardContent>
     </Card>
   )

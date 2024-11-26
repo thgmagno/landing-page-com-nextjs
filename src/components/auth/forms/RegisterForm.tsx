@@ -1,13 +1,18 @@
 'use client'
 
-import { registerUser } from '@/actions'
+import { actions } from '@/actions'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useActionState } from 'react'
 
 export default function RegisterForm() {
-  const [formState, action] = useActionState(registerUser, { errors: {} })
+  const [formState, action, isPending] = useActionState(
+    actions.auth.registerUser,
+    {
+      errors: {},
+    },
+  )
 
   return (
     <form action={action} className="space-y-4">
@@ -45,8 +50,8 @@ export default function RegisterForm() {
           </p>
         )}
       </div>
-      <Button type="submit" className="w-full">
-        Cadastrar
+      <Button type="submit" className="w-full" disabled={isPending}>
+        {isPending ? 'Aguarde...' : 'Cadastrar'}
       </Button>
     </form>
   )

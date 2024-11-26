@@ -1,11 +1,11 @@
-import { Hero } from '@/components/landing-page/Hero'
-import { HowItWorks } from '@/components/landing-page/HowItWorks'
 import { About } from '@/components/landing-page/About'
 import { Footer } from '@/components/landing-page/Footer'
+import { Hero } from '@/components/landing-page/Hero'
+import { HowItWorks } from '@/components/landing-page/HowItWorks'
 
 export function LandingPage() {
   return (
-    <div className="flex flex-col items-center w-[90%] md:w-[80%] lg:w-[70%] max-w-3xl space-y-32 my-24">
+    <div className="my-24 flex w-[90%] max-w-3xl flex-col items-center space-y-32 md:w-[80%] lg:w-[70%]">
       <Hero />
       <HowItWorks />
       <About />

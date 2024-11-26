@@ -8,14 +8,14 @@ interface CalloutProps {
 
 export function Callout({ inputEmail = true }: CalloutProps) {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 max-w-md mx-auto">
-      <div className="flex items-center justify-center gap-4 w-full">
+    <div className="mx-auto flex max-w-md flex-col items-center justify-center gap-4">
+      <div className="flex w-full items-center justify-center gap-4">
         {inputEmail && (
           <Input placeholder="Digite seu e-mail" className="flex-1" />
         )}
         <Button className={cn(!inputEmail && 'w-full')}>Assine agora</Button>
       </div>
-      <span className="text-xs md:text-sm text-muted-foreground">
+      <span className="text-xs text-muted-foreground md:text-sm">
         Comece sua assinatura agora mesmo. Cancele quando quiser.
       </span>
     </div>
