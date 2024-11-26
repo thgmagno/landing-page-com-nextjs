@@ -1,33 +1,27 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import { Navbar } from "@/components/common/Navbar";
-import { Footer } from "@/components/common/Footer";
+import type { Metadata } from 'next'
+import localFont from 'next/font/local'
+import './globals.css'
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
+})
 
 export const metadata: Metadata = {
-  title: "Livro SaaS",
+  title: 'Livro SaaS',
   description:
-    "Deixe que nós fazemos a curadoria para você. Assine nossa plataforma e receba todos os meses um ebook novo de programação.",
-};
+    'Deixe que nós fazemos a curadoria para você. Assine nossa plataforma e receba todos os meses um ebook novo de programação.',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${geistSans.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body className={`${geistSans.variable} antialiased`}>{children}</body>
     </html>
-  );
+  )
 }
